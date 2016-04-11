@@ -97,7 +97,7 @@
     manager.responseSerializer = [[AFCompoundResponseSerializer alloc] init];
     
     NSURL *url = [NSURL URLWithString:urlString];
-    NSLog(@"%@",url);
+   // NSLog(@"%@",url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
@@ -118,7 +118,7 @@
     [dataTask resume];
 }
 
--(void)saveFetchDataIntoArrayResult:(id)resultData{ //saving data locally.
+-(void)saveFetchDataIntoArrayResult:(id)resultData{ //storing data in jsonResult.
     NSArray *midArray = [resultData valueForKeyPath:@"lfs.lf"];
     if (midArray.count == 0) {
         self.jsonResult = nil;
